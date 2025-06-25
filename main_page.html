@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameZone</title>
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* Header with red diagonal stripes */
+    .site-header {
+      background-color: #000;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #000 10px,
+        #000 20px
+      );
+      background-size: 40px 40px;
+      z-index: 1;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      z-index: 1;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds:hover {
+      background-color: #bf0811;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #0a0a0a 10px,
+        #0a0a0a 20px
+      );
+      background-size: 40px 40px;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .shop-button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .shop-button:hover {
+      background-color: #bf0811;
+    }
+
+    /* Sections */
+    .featured,
+    .all-games {
+      padding: 60px 20px;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .featured h2,
+    .all-games h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #e50914;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .game-card {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .game-card h3 {
+      color: #fff;
+      margin: 10px 0 5px;
+    }
+
+    .game-card p {
+      color: #e50914;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #000;
+      color: #777;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+      color: white;
+    }
+
+    .site-footer a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: left;
+      gap: 40px;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="your-logo.png" alt="Logo" />
+      <span class="logo-text">GameZone</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a>
+      <a href="/add-funds" class="add-funds">Add Funds</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h1>Welcome to GameZone</h1>
+    <p>Your ultimate destination for top-tier gaming titles, gear, and credits.</p>
+    <a href="/shop" class="shop-button">Shop Now</a>
+  </main>
+
+  <section class="featured">
+    <h2>Featured Games</h2>
+    <div class="game-grid">
+      <div class="game-card"><img src="game1.jpg" alt="Cyber Clash"><h3>Cyber Clash</h3><p>$59.99</p></div>
+      <div class="game-card"><img src="game2.jpg" alt="Shadow Drive"><h3>Shadow Drive</h3><p>$49.99</p></div>
+      <div class="game-card"><img src="game3.jpg" alt="Dragon Wars"><h3>Dragon Wars</h3><p>$69.99</p></div>
+      <div class="game-card"><img src="game4.jpg" alt="Pixel Panic"><h3>Pixel Panic</h3><p>$29.99</p></div>
+      <div class="game-card"><img src="game5.jpg" alt="Galaxy Blitz"><h3>Galaxy Blitz</h3><p>$39.99</p></div>
+      <div class="game-card"><img src="game6.jpg" alt="Neon Knights"><h3>Neon Knights</h3><p>$44.99</p></div>
+      <div class="game-card"><img src="game7.jpg" alt="Titan Siege"><h3>Titan Siege</h3><p>$54.99</p></div>
+      <div class="game-card"><img src="game8.jpg" alt="Arcade Rush"><h3>Arcade Rush</h3><p>$19.99</p></div>
+      <div class="game-card"><img src="game9.jpg" alt="Wasteland Runners"><h3>Wasteland Runners</h3><p>$34.99</p></div>
+      <div class="game-card"><img src="game10.jpg" alt="Sky Raiders"><h3>Sky Raiders</h3><p>$24.99</p></div>
+    </div>
+  </section>
+
+  <section class="all-games">
+    <h2>All Games</h2>
+    <div class="game-grid">
+      <!-- Reused + 10 new -->
+      <div class="game-card"><img src="game1.jpg" alt="Cyber Clash"><h3>Cyber Clash</h3><p>$59.99</p></div>
+      <div class="game-card"><img src="game2.jpg" alt="Shadow Drive"><h3>Shadow Drive</h3><p>$49.99</p></div>
+      <div class="game-card"><img src="game3.jpg" alt="Dragon Wars"><h3>Dragon Wars</h3><p>$69.99</p></div>
+      <div class="game-card"><img src="game4.jpg" alt="Pixel Panic"><h3>Pixel Panic</h3><p>$29.99</p></div>
+      <div class="game-card"><img src="game5.jpg" alt="Galaxy Blitz"><h3>Galaxy Blitz</h3><p>$39.99</p></div>
+      <div class="game-card"><img src="game6.jpg" alt="Neon Knights"><h3>Neon Knights</h3><p>$44.99</p></div>
+      <div class="game-card"><img src="game7.jpg" alt="Titan Siege"><h3>Titan Siege</h3><p>$54.99</p></div>
+      <div class="game-card"><img src="game8.jpg" alt="Arcade Rush"><h3>Arcade Rush</h3><p>$19.99</p></div>
+      <div class="game-card"><img src="game9.jpg" alt="Wasteland Runners"><h3>Wasteland Runners</h3><p>$34.99</p></div>
+      <div class="game-card"><img src="game10.jpg" alt="Sky Raiders"><h3>Sky Raiders</h3><p>$24.99</p></div>
+      <div class="game-card"><img src="game11.jpg" alt="Inferno Arena"><h3>Inferno Arena</h3><p>$49.99</p></div>
+      <div class="game-card"><img src="game12.jpg" alt="Quantum Drift"><h3>Quantum Drift</h3><p>$39.99</p></div>
+      <div class="game-card"><img src="game13.jpg" alt="Robo Rampage"><h3>Robo Rampage</h3><p>$59.99</p></div>
+      <div class="game-card"><img src="game14.jpg" alt="Dungeon Raid"><h3>Dungeon Raid</h3><p>$29.99</p></div>
+      <div class="game-card"><img src="game15.jpg" alt="Mystic Quest"><h3>Mystic Quest</h3><p>$44.99</p></div>
+      <div class="game-card"><img src="game16.jpg" alt="Urban Rival"><h3>Urban Rival</h3><p>$34.99</p></div>
+      <div class="game-card"><img src="game17.jpg" alt="Knightfall"><h3>Knightfall</h3><p>$49.99</p></div>
+      <div class="game-card"><img src="game18.jpg" alt="Deadly Depths"><h3>Deadly Depths</h3><p>$39.99</p></div>
+      <div class="game-card"><img src="game19.jpg" alt="Solar Smash"><h3>Solar Smash</h3><p>$59.99</p></div>
+      <div class="game-card"><img src="game20.jpg" alt="Alien Siege"><h3>Alien Siege</h3><p>$24.99</p></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>GameZone</h3>
+        <p>Your go-to store for games and gear.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/add-funds">Add Funds</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@gamezone.com</p>
+        <p>Phone: +1 (800) 123-4567</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#">Facebook</a><br>
+          <a href="#">Twitter</a><br>
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 GameZone. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

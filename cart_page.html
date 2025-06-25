@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameZone - Cart</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* Header with red diagonal stripes */
+    .site-header {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #000 10px,
+        #000 20px
+      );
+      background-size: 40px 40px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds:hover {
+      background-color: #bf0811;
+    }
+
+    /* Cart Section */
+    .cart-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .cart-section h2 {
+      font-size: 2rem;
+      color: #e50914;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #2a2a2a;
+    }
+
+    td img {
+      height: 60px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .product-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity button {
+      background-color: #e50914;
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .quantity span {
+      font-size: 1.1rem;
+    }
+
+    .total {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .checkout-btn {
+      display: block;
+      background-color: #e50914;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      margin: 30px 0 0 auto;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #bf0811;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #000;
+      color: #777;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+      color: white;
+    }
+
+    .site-footer a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: left;
+      gap: 40px;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      <img src="your-logo.png" alt="Logo" />
+      <span class="logo-text">GameZone</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a href="/add-funds" class="add-funds">Add Funds</a>
+    </nav>
+  </header>
+
+  <main class="cart-section">
+    <h2>Your Cart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="product-info">
+            <img src="game1.jpg" alt="Cyber Clash" />
+            Cyber Clash
+          </td>
+          <td>$59.99</td>
+          <td class="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </td>
+          <td>$59.99</td>
+        </tr>
+        <tr>
+          <td class="product-info">
+            <img src="game3.jpg" alt="Dragon Wars" />
+            Dragon Wars
+          </td>
+          <td>$69.99</td>
+          <td class="quantity">
+            <button>-</button>
+            <span>2</span>
+            <button>+</button>
+          </td>
+          <td>$139.98</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total">Total: $199.97</div>
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>GameZone</h3>
+        <p>Your go-to store for games and gear.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/add-funds">Add Funds</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@gamezone.com</p>
+        <p>Phone: +1 (800) 123-4567</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#">Facebook</a><br>
+          <a href="#">Twitter</a><br>
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 GameZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
