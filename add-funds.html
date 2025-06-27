@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameZone - Add Funds</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* Header with red stripes */
+    .site-header {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #000 10px,
+        #000 20px
+      );
+      background-size: 40px 40px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds:hover {
+      background-color: #bf0811;
+    }
+
+    /* Add Funds Section */
+    .add-funds-section {
+      max-width: 500px;
+      margin: 80px auto;
+      background-color: #1c1c1c;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+    }
+
+    .add-funds-section h2 {
+      text-align: center;
+      color: #e50914;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      background-color: #2a2a2a;
+      color: white;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      background-color: #333;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #e50914;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #bf0811;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #000;
+      color: #777;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+      color: white;
+    }
+
+    .site-footer a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: left;
+      gap: 40px;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="your-logo.png" alt="Logo" />
+      <span class="logo-text">GameZone</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a href="cart_page.html">View Cart</a>
+      <a href="#" class="add-funds">Add Funds</a>
+    </nav>
+  </header>
+
+  <main class="add-funds-section">
+    <h2>Add Funds</h2>
+    <form>
+      <div class="form-group">
+        <label for="amount">Select Amount</label>
+        <select id="amount" name="amount">
+          <option value="10">$10</option>
+          <option value="25">$25</option>
+          <option value="50">$50</option>
+          <option value="100">$100</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="card">Credit Card Number</label>
+        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" />
+      </div>
+      <div class="form-group">
+        <label for="expiry">Expiry Date</label>
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" name="cvv" placeholder="123" />
+      </div>
+      <button type="submit" class="submit-btn">Add Funds</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>GameZone</h3>
+        <p>Your go-to store for games and gear.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="cart_page.html">View Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@gamezone.com</p>
+        <p>Phone: +1 (800) 123-4567</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#">Facebook</a><br>
+          <a href="#">Twitter</a><br>
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 GameZone. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
