@@ -53,6 +53,19 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: #e50914;
+      margin-right: 15px;
+    }
+
+    /* New balance style */
+    .balance {
+      font-size: 1rem;
+      color: white;
+      background-color: #1c1c1c;
+      padding: 6px 12px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
+      user-select: none;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -223,6 +236,7 @@
     <div class="logo">
       <img src="your-logo.png" alt="Logo" />
       <span class="logo-text">GameZone</span>
+      <div class="balance">Balance: $<span id="balance">0</span></div>
     </div>
     <nav class="nav-links">
       <a href="/">Home</a>
@@ -296,5 +310,22 @@
       <p>&copy; 2025 GameZone. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Load balance from localStorage or start at 0
+    function getBalance() {
+      return parseInt(localStorage.getItem('balance')) || 0;
+    }
+    function setBalance(value) {
+      localStorage.setItem('balance', value);
+    }
+
+    function updateBalanceDisplay() {
+      document.getElementById('balance').textContent = getBalance();
+    }
+
+    // Initialize balance on page load
+    updateBalanceDisplay();
+  </script>
 </body>
 </html>

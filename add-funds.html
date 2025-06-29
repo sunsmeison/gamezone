@@ -2,51 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameZone - Add Funds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameZone</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #0a0a0a;
       color: white;
     }
-
-    /* Header with red stripes */
     .site-header {
-      background-image: repeating-linear-gradient(
-        45deg,
-        #e50914 0,
-        #e50914 10px,
-        #000 10px,
-        #000 20px
-      );
-      background-size: 40px 40px;
+      background-color: #000;
       padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      background-image: repeating-linear-gradient(45deg, #e50914 0, #e50914 10px, #000 10px, #000 20px);
+      background-size: 40px 40px;
     }
-
     .logo {
       display: flex;
       align-items: center;
     }
-
     .logo img {
       height: 40px;
       width: 40px;
       object-fit: contain;
       margin-right: 10px;
     }
-
     .logo-text {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #fff;
+      color: #ffffff;
+      margin-right: 20px;
     }
-
+    .balance {
+      font-size: 1rem;
+      color: #fff;
+      background-color: #1c1c1c;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
+    }
     .nav-links a {
       color: white;
       text-decoration: none;
@@ -55,100 +55,75 @@
       border-radius: 4px;
       transition: background 0.3s ease;
     }
-
     .nav-links a:hover {
       background-color: #e50914;
     }
-
     .nav-links .add-funds {
       background-color: #e50914;
     }
-
     .nav-links .add-funds:hover {
       background-color: #bf0811;
     }
-
-    /* Add Funds Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #ccc;
+    }
+    .shop-button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .shop-button:hover {
+      background-color: #bf0811;
+    }
     .add-funds-section {
       max-width: 500px;
-      margin: 80px auto;
+      margin: 60px auto;
       background-color: #1c1c1c;
-      padding: 40px 30px;
+      padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
     }
-
-    .add-funds-section h2 {
-      text-align: center;
-      color: #e50914;
-      margin-bottom: 30px;
-    }
-
     .form-group {
       margin-bottom: 20px;
     }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #ccc;
-    }
-
     input, select {
       width: 100%;
       padding: 12px;
-      border-radius: 6px;
-      border: none;
-      font-size: 1rem;
       background-color: #2a2a2a;
       color: white;
+      border: none;
+      border-radius: 6px;
     }
-
-    input:focus, select:focus {
-      outline: none;
-      background-color: #333;
-    }
-
     .submit-btn {
       width: 100%;
       background-color: #e50914;
-      color: white;
       padding: 14px;
+      font-size: 1.1rem;
       border: none;
       border-radius: 6px;
-      font-size: 1.1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: 10px;
     }
-
     .submit-btn:hover {
       background-color: #bf0811;
     }
-
-    /* Footer */
     .site-footer {
       background-color: #000;
       color: #777;
       padding: 40px 20px;
       text-align: center;
-      margin-top: 60px;
     }
-
-    .site-footer h3,
-    .site-footer h4 {
-      color: white;
-    }
-
-    .site-footer a {
-      color: #e50914;
-      text-decoration: none;
-    }
-
-    .site-footer a:hover {
-      text-decoration: underline;
-    }
-
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -158,7 +133,6 @@
       text-align: left;
       gap: 40px;
     }
-
     .footer-bottom {
       margin-top: 40px;
       text-align: center;
@@ -169,20 +143,20 @@
 <body>
   <header class="site-header">
     <div class="logo">
-      <img src="your-logo.png" alt="Logo" />
+      <img src="your-logo.png" alt="Logo">
       <span class="logo-text">GameZone</span>
+      <div class="balance">Balance: $<span id="balance">0</span></div>
     </div>
     <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/shop">Shop</a>
-      <a href="cart_page.html">View Cart</a>
-      <a href="#" class="add-funds">Add Funds</a>
+      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">Home</a>
+      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html#shop">Shop</a>
+      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html#add-funds" class="add-funds">Add Funds</a>
     </nav>
   </header>
 
-  <main class="add-funds-section">
+  <main class="add-funds-section" id="add-funds">
     <h2>Add Funds</h2>
-    <form>
+    <form id="funds-form">
       <div class="form-group">
         <label for="amount">Select Amount</label>
         <select id="amount" name="amount">
@@ -194,15 +168,15 @@
       </div>
       <div class="form-group">
         <label for="card">Credit Card Number</label>
-        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" />
+        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456">
       </div>
       <div class="form-group">
         <label for="expiry">Expiry Date</label>
-        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
       </div>
       <div class="form-group">
         <label for="cvv">CVV</label>
-        <input type="password" id="cvv" name="cvv" placeholder="123" />
+        <input type="password" id="cvv" name="cvv" placeholder="123">
       </div>
       <button type="submit" class="submit-btn">Add Funds</button>
     </form>
@@ -217,9 +191,9 @@
       <div>
         <h4>Quick Links</h4>
         <ul style="list-style: none; padding: 0;">
-          <li><a href="/">Home</a></li>
-          <li><a href="/shop">Shop</a></li>
-          <li><a href="cart_page.html">View Cart</a></li>
+          <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">Home</a></li>
+          <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html#shop">Shop</a></li>
+          <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html#add-funds">Add Funds</a></li>
         </ul>
       </div>
       <div>
@@ -240,5 +214,22 @@
       <p>&copy; 2025 GameZone. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById('funds-form');
+    const balanceDisplay = document.getElementById('balance');
+
+    let balance = parseInt(localStorage.getItem('balance')) || 0;
+    balanceDisplay.textContent = balance;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const amount = parseInt(document.getElementById('amount').value);
+      balance += amount;
+      balanceDisplay.textContent = balance;
+      localStorage.setItem('balance', balance);
+      form.reset();
+    });
+  </script>
 </body>
 </html>
