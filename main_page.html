@@ -9,7 +9,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Base styles */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -24,8 +23,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
       background-image: repeating-linear-gradient(
         45deg,
         #e50914 0,
@@ -49,14 +46,18 @@
       margin-right: 10px;
     }
 
-    .logo-text {
+    .logo-text a {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #e50914;
+      color: white;
+      text-decoration: none;
       margin-right: 15px;
     }
 
-    /* New balance style */
+    .logo-text a:hover {
+      text-decoration: underline;
+    }
+
     .balance {
       font-size: 1rem;
       color: white;
@@ -66,10 +67,6 @@
       box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
       user-select: none;
       white-space: nowrap;
-    }
-
-    .nav-links {
-      z-index: 1;
     }
 
     .nav-links a {
@@ -235,11 +232,11 @@
   <header class="site-header">
     <div class="logo">
       <img src="your-logo.png" alt="Logo" />
-      <span class="logo-text">GameZone</span>
+      <span class="logo-text"><a href="#all-games">GameZone</a></span>
       <div class="balance">Balance: $<span id="balance">0</span></div>
     </div>
     <nav class="nav-links">
-      <a href="/">Home</a>
+      <a href="#all-games">Home</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html" class="add-funds">Add Funds</a>
     </nav>
@@ -247,11 +244,11 @@
 
   <main class="hero">
     <h1>Welcome to GameZone</h1>
-    <p>Your ultimate destination for top-tier gaming titles, gear, and credits.</p>
+    <p>Your ultimate destination for top-tier gaming titles.</p>
     <a href="#all-games" class="shop-button">Shop Now</a>
   </main>
 
-  <section class="featured">
+  <section class="featured" id="featured">
     <h2>Featured Games</h2>
     <div class="game-grid">
       <div class="game-card"><img src="game1.jpg" alt="Cyber Clash"><h3>Cyber Clash</h3><button class="price-button">$59.99</button></div>
@@ -282,14 +279,14 @@
     <div class="footer-content">
       <div>
         <h3>GameZone</h3>
-        <p>Your go-to store for games and gear.</p>
+        <p>Your go-to store for games.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
         <ul style="list-style: none; padding: 0;">
-          <li><a href="/">Home</a></li>
+          <li><a href="#featured">Home</a></li>
           <li><a href="#all-games">Shop</a></li>
-          <li><a href="/add-funds">Add Funds</a></li>
+          <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html">Add Funds</a></li>
         </ul>
       </div>
       <div>
@@ -312,19 +309,15 @@
   </footer>
 
   <script>
-    // Load balance from localStorage or start at 0
     function getBalance() {
       return parseInt(localStorage.getItem('balance')) || 0;
     }
     function setBalance(value) {
       localStorage.setItem('balance', value);
     }
-
     function updateBalanceDisplay() {
       document.getElementById('balance').textContent = getBalance();
     }
-
-    // Initialize balance on page load
     updateBalanceDisplay();
   </script>
 </body>
