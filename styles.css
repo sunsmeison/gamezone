@@ -212,3 +212,40 @@ body {
   text-align: center;
   color: #777;
 }
+.navbar {
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ბურგერის ხატულა (მხოლოდ მობილურზე ჩანს) */
+.burger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.burger1{
+  display: none;
+
+
+
+
+}
