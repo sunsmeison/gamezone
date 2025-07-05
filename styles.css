@@ -6,6 +6,10 @@ body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Header with red diagonal stripes */
 .site-header {
   background-color: #000;
@@ -40,21 +44,40 @@ body {
   margin-right: 10px;
 }
 
-.logo-text {
+.logo-text a {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #e50914;
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
 }
 
-/* Navigation links */
+.logo-text a:hover {
+  text-decoration: underline;
+}
+
+/* Balance Display */
+.balance {
+  font-size: 1rem;
+  color: white;
+  background-color: #1c1c1c;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Navigation links (desktop) */
 .nav-links {
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
   padding: 8px 16px;
   border-radius: 4px;
   transition: background 0.3s ease;
@@ -70,6 +93,18 @@ body {
 
 .nav-links .add-funds:hover {
   background-color: #bf0811;
+}
+
+/* Mobile Burger Menu */
+.burger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+.burger1 {
+  display: none;
 }
 
 /* Hero Section */
@@ -212,44 +247,35 @@ body {
   text-align: center;
   color: #777;
 }
-.navbar {
-  background: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
 
-.logo {
-  font-size: 24px;
-}
+/* Responsive: show burger menu on small screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+  }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+  .nav-links.show {
+    display: flex;
+  }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-}
+  .burger1 {
+    display: block;
+  }
 
-/* ბურგერის ხატულა (მხოლოდ მობილურზე ჩანს) */
-.burger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-.burger1{
-  display: none;
+  .burger {
+    display: block;
+  }
 
-
-
-
-}
-/* Hide burger1 on desktop by default */
-.burger1 {
-  display: none;
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

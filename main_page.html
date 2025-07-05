@@ -4,14 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GameZone</title>
-  <link rel="stylesheet" href="resonsive.css">
-  <link rel="stylesheet" href="style.css">
-
-
+  <link rel="stylesheet" href="resonsive.css" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #0a0a0a; color: white; }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* Site header styles */
     .site-header {
       background-color: #000;
       color: #fff;
@@ -19,14 +25,45 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-image: repeating-linear-gradient(45deg, #e50914 0, #e50914 10px, #000 10px, #000 20px);
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #000 10px,
+        #000 20px
+      );
       background-size: 40px 40px;
-      z-index: 1;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
     }
-    .logo { display: flex; align-items: center; }
-    .logo img { height: 40px; width: 40px; object-fit: contain; margin-right: 10px; }
-    .logo-text a { font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; margin-right: 15px; }
-    .logo-text a:hover { text-decoration: underline; }
+
+    /* Logo styles */
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .logo-text a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .logo-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Balance */
     .balance {
       font-size: 1rem;
       color: white;
@@ -37,25 +74,92 @@
       user-select: none;
       white-space: nowrap;
     }
+
+    /* Nav styles */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
     .nav-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
       padding: 8px 16px;
       border-radius: 4px;
       transition: background 0.3s ease;
     }
-    .nav-links a:hover { background-color: #e50914; }
-    .nav-links .add-funds { background-color: #e50914; }
-    .nav-links .add-funds:hover { background-color: #bf0811; }
+
+    .nav-links a:hover {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds {
+      background-color: #e50914;
+    }
+
+    .nav-links .add-funds:hover {
+      background-color: #bf0811;
+    }
+
+    /* Burger icon hidden on desktop */
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Responsive: Show burger and hide nav links on small screens */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 70px; /* below header */
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        gap: 15px;
+        z-index: 20;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    /* Hero Section */
     .hero {
-      background-image: repeating-linear-gradient(45deg, #e50914 0, #e50914 10px, #0a0a0a 10px, #0a0a0a 20px);
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #0a0a0a 10px,
+        #0a0a0a 20px
+      );
       background-size: 40px 40px;
       text-align: center;
       padding: 100px 20px;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #fff; }
-    .hero p { font-size: 1.25rem; margin-bottom: 30px; color: #ccc; }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
     .shop-button {
       background-color: #e50914;
       color: #fff;
@@ -66,17 +170,26 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-    .shop-button:hover { background-color: #bf0811; }
-    .featured, .all-games {
+
+    .shop-button:hover {
+      background-color: #bf0811;
+    }
+
+    /* Featured & All Games Sections */
+    .featured,
+    .all-games {
       padding: 60px 20px;
       background-color: #111;
       text-align: center;
     }
-    .featured h2, .all-games h2 {
+
+    .featured h2,
+    .all-games h2 {
       font-size: 2rem;
       margin-bottom: 40px;
       color: #e50914;
     }
+
     .game-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -84,19 +197,30 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .game-card {
       background-color: #1c1c1c;
       padding: 20px;
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
-    .game-card:hover { transform: translateY(-5px); }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+
     .game-card img {
       width: 100%;
       border-radius: 4px;
       margin-bottom: 12px;
     }
-    .game-card h3 { color: #fff; margin: 10px 0 5px; }
+
+    .game-card h3 {
+      color: #fff;
+      margin: 10px 0 5px;
+    }
+
+    /* Price Button */
     .price-button {
       background-color: #e50914;
       color: white;
@@ -108,16 +232,33 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .price-button:hover { background-color: #bf0811; }
+
+    .price-button:hover {
+      background-color: #bf0811;
+    }
+
+    /* Footer */
     .site-footer {
       background-color: #000;
       color: #777;
       padding: 40px 20px;
       text-align: center;
     }
-    .site-footer h3, .site-footer h4 { color: white; }
-    .site-footer a { color: #e50914; text-decoration: none; }
-    .site-footer a:hover { text-decoration: underline; }
+
+    .site-footer h3,
+    .site-footer h4 {
+      color: white;
+    }
+
+    .site-footer a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -127,32 +268,29 @@
       text-align: left;
       gap: 40px;
     }
+
     .footer-bottom {
       margin-top: 40px;
       text-align: center;
       color: #777;
     }
-    
   </style>
 </head>
 <body>
-  
   <header class="site-header">
     <div class="logo">
       <img src="C:\Users\giorg\OneDrive\Desktop\personal project\logo.png" alt="Logo" />
       <span class="logo-text"><a href="#all-games">GameZone</a></span>
       <div class="balance">Balance: $<span id="balance">0</span></div>
     </div>
-    <nav class="nav-links">
+
+    <nav class="nav-links" id="navLinks">
       <a href="#all-games">Home</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html" class="add-funds">Add Funds</a>
     </nav>
-    
-    
-    
 
-  
+    <div class="burger" onclick="toggleMenu()">☰</div>
   </header>
 
   <main class="hero">
@@ -164,57 +302,96 @@
   <section class="featured" id="featured">
     <h2>Featured Games</h2>
     <div class="game-grid">
-      <div class="game-card"><img src="cyberpunk.jpg"alt="cyberpunk"><h3>Cyberpunk</h3><button class="price-button" onclick="addToCart('cyberpunk', 59.99, 'cyberpunk.jpg')">$59.99</button></div>
-      <div class="game-card"><img src="minecraft.jpg" alt="Shadow Drive"><h3>minecraft</h3><button class="price-button" onclick="addToCart('minecraft', 49.99, 'minecraft.jpg')">$49.99</button></div>
-      <div class="game-card"><img src="signalis.jpg" alt="Drago"><h3>signalis</h3><button class="price-button" onclick="addToCart('signalis', 69.99, 'signalis.jpg')">$69.99</button></div>
+      <div class="game-card">
+        <img src="cyberpunk.jpg" alt="cyberpunk" />
+        <h3>Cyberpunk</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('cyberpunk', 59.99, 'cyberpunk.jpg')"
+        >
+          $59.99
+        </button>
+      </div>
+      <div class="game-card">
+        <img src="minecraft.jpg" alt="Shadow Drive" />
+        <h3>minecraft</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('minecraft', 49.99, 'minecraft.jpg')"
+        >
+          $49.99
+        </button>
+      </div>
+      <div class="game-card">
+        <img src="signalis.jpg" alt="Drago" />
+        <h3>signalis</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('signalis', 69.99, 'signalis.jpg')"
+        >
+          $69.99
+        </button>
+      </div>
     </div>
   </section>
 
   <section class="all-games" id="all-games">
     <h2>All Games</h2>
     <div class="game-grid">
-      <div class="game-card"><img src="pacific_drive.jpg" alt="Neon Knights"><h3>pacific drive</h3><button class="price-button" onclick="addToCart('pacific drive', 44.99, 'pacific_drive.jpg')">$44.99</button></div>
-      <div class="game-card"><img src="balatro.jpg" alt="Titan Siege"><h3>balatro</h3><button class="price-button" onclick="addToCart('balatro', 54.99, 'balatro.jpg')">$54.99</button></div>
-      <div class="game-card"><img src="ultrakill.jpg" alt="Neon Knights"><h3>ultrakill</h3><button class="price-button" onclick="addToCart('ultrakill', 44.99, 'ultrakill.jpg')">$44.99</button></div>
-      <div class="game-card"><img src="zomboid.jpg" alt="Neon Knights"><h3>project zomboid</h3><button class="price-button" onclick="addToCart('project zomboid', 44.99, 'zomboid.jpg')">$44.99</button></div>
-      <div class="game-card"><img src="red_dead_redeption_2.jpg" alt="Neon Knights"><h3>red dead redeption 2</h3><button class="price-button" onclick="addToCart('red dead redemption 2', 44.99, 'red_dead_redeption_2.jpg')">$44.99</button></div>
-
-
+      <div class="game-card">
+        <img src="pacific_drive.jpg" alt="Neon Knights" />
+        <h3>pacific drive</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('pacific drive', 44.99, 'pacific_drive.jpg')"
+        >
+          $44.99
+        </button>
+      </div>
+      <div class="game-card">
+        <img src="balatro.jpg" alt="Titan Siege" />
+        <h3>balatro</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('balatro', 54.99, 'balatro.jpg')"
+        >
+          $54.99
+        </button>
+      </div>
+      <div class="game-card">
+        <img src="ultrakill.jpg" alt="Neon Knights" />
+        <h3>ultrakill</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('ultrakill', 44.99, 'ultrakill.jpg')"
+        >
+          $44.99
+        </button>
+      </div>
+      <div class="game-card">
+        <img src="zomboid.jpg" alt="Neon Knights" />
+        <h3>project zomboid</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('project zomboid', 44.99, 'zomboid.jpg')"
+        >
+          $44.99
+        </button>
+      </div>
+      <div class="game-card">
+        <img src="red_dead_redeption_2.jpg" alt="Neon Knights" />
+        <h3>red dead redeption 2</h3>
+        <button
+          class="price-button"
+          onclick="addToCart('red dead redemption 2', 44.99, 'red_dead_redeption_2.jpg')"
+        >
+          $44.99
+        </button>
+      </div>
     </div>
   </section>
 
-  <footer class="site-footer"> <!-- unchanged --></footer>
-
-  <script>
-    function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("show");
-}
-    function getBalance() {
-      return parseInt(localStorage.getItem('balance')) || 0;
-    }
-    function setBalance(value) {
-      localStorage.setItem('balance', value);
-    }
-    function updateBalanceDisplay() {
-      document.getElementById('balance').textContent = getBalance();
-    }
-    updateBalanceDisplay();
-
-    function addToCart(name, price, image) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existing = cart.find(item => item.name === name);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ name, price, image, quantity: 1 });
-      }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`${name} added to cart!`);
-    }
-  </script>
-
-    <footer class="site-footer">
+  <footer class="site-footer">
     <div class="footer-content">
       <div>
         <h3>GameZone</h3>
@@ -225,7 +402,11 @@
         <ul style="list-style: none; padding: 0;">
           <li><a href="#featured">Home</a></li>
           <li><a href="#all-games">Shop</a></li>
-          <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html">Add Funds</a></li>
+          <li>
+            <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html"
+              >Add Funds</a
+            >
+          </li>
         </ul>
       </div>
       <div>
@@ -246,5 +427,37 @@
       <p>&copy; 2025 GameZone. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+
+    function getBalance() {
+      return parseInt(localStorage.getItem("balance")) || 0;
+    }
+
+    function setBalance(value) {
+      localStorage.setItem("balance", value);
+    }
+
+    function updateBalanceDisplay() {
+      document.getElementById("balance").textContent = getBalance();
+    }
+    updateBalanceDisplay();
+
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find((item) => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, image, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
 </body>
 </html>

@@ -22,6 +22,9 @@
       align-items: center;
       background-image: repeating-linear-gradient(45deg, #e50914 0, #e50914 10px, #000 10px, #000 20px);
       background-size: 40px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .logo {
       display: flex;
@@ -40,6 +43,13 @@
       margin-right: 20px;
       text-decoration: none;
     }
+    .logo-text a {
+      color: white;
+      text-decoration: none;
+    }
+    .logo-text a:hover {
+      text-decoration: underline;
+    }
     .balance {
       font-size: 1rem;
       color: #fff;
@@ -48,13 +58,18 @@
       border-radius: 6px;
       box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
     }
+    /* Nav styles */
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
     .nav-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
       padding: 8px 16px;
       border-radius: 4px;
       transition: background 0.3s ease;
+      margin-left: 20px;
     }
     .nav-links a:hover {
       background-color: #e50914;
@@ -65,6 +80,54 @@
     .nav-links .add-funds:hover {
       background-color: #bf0811;
     }
+
+    /* Burger menu icon */
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+      color: white;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 24px;
+        background-color: #000;
+        flex-direction: column;
+        width: 180px;
+        padding: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(229, 9, 20, 0.7);
+        display: none;
+        z-index: 1001;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links a {
+        margin: 10px 0;
+        padding: 10px 20px;
+        margin-left: 0;
+      }
+      .burger {
+        display: block;
+      }
+      /* Adjust logo and balance in small screens */
+      .logo {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .balance {
+        order: 99;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
     .hero {
       text-align: center;
       padding: 100px 20px;
@@ -146,28 +209,23 @@
       text-align: center;
       color: #777;
     }
-    .logo-text a,
-    .logo-text a:visited,
-    .logo-text a:hover {
-    color: white;
-    text-decoration: none;
-}
-
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="logo">
       <img src="C:\Users\giorg\OneDrive\Desktop\personal project\logo.png" alt="Logo">
-      <span class="logo-text"><a href="C:\Users\giorg\OneDrive\Desktop\personal project\main_page.html">GameZone</a></span>
-
+      <span class="logo-text"><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">GameZone</a></span>
       <div class="balance">Balance: $<span id="balance">0</span></div>
     </div>
-    <nav class="nav-links">
-      <a href="file:///C:\Users\giorg\OneDrive\Desktop\personal project\main_page.html">Home</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">Home</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">Shop</a>
     </nav>
+
+    <div class="burger" id="burger">&#9776;</div>
   </header>
 
   <main class="add-funds-section" id="add-funds">
@@ -184,15 +242,15 @@
       </div>
       <div class="form-group">
         <label for="card">Credit Card Number</label>
-        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456">
+        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" />
       </div>
       <div class="form-group">
         <label for="expiry">Expiry Date</label>
-        <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
       </div>
       <div class="form-group">
         <label for="cvv">CVV</label>
-        <input type="password" id="cvv" name="cvv" placeholder="123">
+        <input type="password" id="cvv" name="cvv" placeholder="123" />
       </div>
       <button type="submit" class="submit-btn">Add Funds</button>
     </form>
@@ -210,7 +268,7 @@
       <div>
         <h4>Quick Links</h4>
         <ul style="list-style: none; padding: 0;">
-          <li><a href="file:///C:\Users\giorg\OneDrive\Desktop\personal project\main_page.html">Home</a></li>
+          <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">Home</a></li>
           <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a></li>
           <li><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html" class="add-funds">Add Funds</a></li>
         </ul>
@@ -223,8 +281,8 @@
       <div>
         <h4>Follow Us</h4>
         <p>
-          <a href="#">Facebook</a><br>
-          <a href="#">Twitter</a><br>
+          <a href="#">Facebook</a><br />
+          <a href="#">Twitter</a><br />
           <a href="#">Instagram</a>
         </p>
       </div>
@@ -249,6 +307,15 @@
       localStorage.setItem('balance', balance);
       form.reset();
     });
+
+    // Burger menu toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
   </script>
 </body>
 </html>
+

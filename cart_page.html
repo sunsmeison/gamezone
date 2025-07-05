@@ -12,6 +12,7 @@
       color: white;
     }
 
+    /* Header styles */
     .site-header {
       background-image: repeating-linear-gradient(
         45deg,
@@ -26,6 +27,9 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
@@ -40,16 +44,26 @@
       margin-right: 10px;
     }
 
-    .logo-text {
+    .logo-text a {
       font-size: 1.5rem;
       font-weight: bold;
       color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Nav styles */
+    .nav-links {
+      display: flex;
+      gap: 15px;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
       padding: 8px 16px;
       border-radius: 4px;
       transition: background 0.3s ease;
@@ -67,6 +81,45 @@
       background-color: #bf0811;
     }
 
+    /* Burger menu icon */
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 24px;
+        background-color: #000;
+        flex-direction: column;
+        width: 180px;
+        padding: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(229, 9, 20, 0.7);
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        padding: 10px 20px;
+      }
+
+      .burger {
+        display: block;
+        color: white;
+      }
+    }
+
+    /* Cart styles */
     .cart-section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -158,6 +211,7 @@
       background-color: #bf0811;
     }
 
+    /* Footer styles */
     .site-footer {
       background-color: #000;
       color: #777;
@@ -195,26 +249,25 @@
       text-align: center;
       color: #777;
     }
-    .logo-text a,
-    .logo-text a:visited,
-    .logo-text a:hover {
-    color: white;
-    text-decoration: none;
-}
   </style>
 </head>
 <body>
 
+  <!-- Header bar with logo and navigation -->
   <header class="site-header">
     <div class="logo">
       <img src="C:\Users\giorg\OneDrive\Desktop\personal project\logo.png" alt="Logo" />
-      <span class="logo-text"><a href="C:\Users\giorg\OneDrive\Desktop\personal project\main_page.html">GameZone</a></span>
+      <span class="logo-text"><a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">GameZone</a></span>
     </div>
-    <nav class="nav-links">
+
+    <nav class="nav-links" id="navLinks">
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/main_page.html">Home</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a>
       <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html" class="add-funds">Add Funds</a>
     </nav>
+
+    <!-- Burger icon -->
+    <div class="burger" id="burger">&#9776;</div>
   </header>
 
   <main class="cart-section">
@@ -273,6 +326,16 @@
   </footer>
 
   <script>
+    // Burger menu toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Cart rendering and checkout logic
+
     function renderCart() {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       const tbody = document.getElementById('cart-items');
