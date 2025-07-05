@@ -249,3 +249,7 @@ body {
 
 
 }
+/* Hide burger1 on desktop by default */
+.burger1 {
+  display: none;
+}
