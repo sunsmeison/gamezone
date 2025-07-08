@@ -17,7 +17,6 @@
       color: white;
     }
 
-    /* Site header styles */
     .site-header {
       background-color: #000;
       color: #fff;
@@ -38,7 +37,6 @@
       flex-wrap: wrap;
     }
 
-    /* Logo styles */
     .logo {
       display: flex;
       align-items: center;
@@ -63,7 +61,6 @@
       text-decoration: underline;
     }
 
-    /* Balance */
     .balance {
       font-size: 1rem;
       color: white;
@@ -75,7 +72,6 @@
       white-space: nowrap;
     }
 
-    /* Nav styles */
     .nav-links {
       display: flex;
       gap: 20px;
@@ -102,7 +98,6 @@
       background-color: #bf0811;
     }
 
-    /* Burger icon hidden on desktop */
     .burger {
       display: none;
       font-size: 28px;
@@ -110,14 +105,13 @@
       color: white;
     }
 
-    /* Responsive: Show burger and hide nav links on small screens */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
         flex-direction: column;
         background-color: #111;
         position: absolute;
-        top: 70px; /* below header */
+        top: 70px;
         right: 0;
         width: 100%;
         padding: 20px;
@@ -134,7 +128,6 @@
       }
     }
 
-    /* Hero Section */
     .hero {
       background-image: repeating-linear-gradient(
         45deg,
@@ -175,7 +168,6 @@
       background-color: #bf0811;
     }
 
-    /* Featured & All Games Sections */
     .featured,
     .all-games {
       padding: 60px 20px;
@@ -220,7 +212,6 @@
       margin: 10px 0 5px;
     }
 
-    /* Price Button */
     .price-button {
       background-color: #e50914;
       color: white;
@@ -237,7 +228,6 @@
       background-color: #bf0811;
     }
 
-    /* Footer */
     .site-footer {
       background-color: #000;
       color: #777;
@@ -279,15 +269,15 @@
 <body>
   <header class="site-header">
     <div class="logo">
-      <img src="C:\Users\giorg\OneDrive\Desktop\personal project\logo.png" alt="Logo" />
+      <img src="logo.png" alt="Logo" />
       <span class="logo-text"><a href="#all-games">GameZone</a></span>
       <div class="balance">Balance: $<span id="balance">0</span></div>
     </div>
 
     <nav class="nav-links" id="navLinks">
       <a href="#all-games">Home</a>
-      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/cart_page.html">View Cart</a>
-      <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html" class="add-funds">Add Funds</a>
+      <a href="cart_page.html">View Cart</a>
+      <a href="add-funds.html" class="add-funds">Add Funds</a>
     </nav>
 
     <div class="burger" onclick="toggleMenu()">☰</div>
@@ -303,34 +293,25 @@
     <h2>Featured Games</h2>
     <div class="game-grid">
       <div class="game-card">
-        <img src="cyberpunk.jpg" alt="cyberpunk" />
-        <h3>Cyberpunk</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('cyberpunk', 59.99, 'cyberpunk.jpg')"
-        >
-          $59.99
-        </button>
+        <a href="game.html?name=cyberpunk">
+          <img src="cyberpunk.jpg" alt="cyberpunk" />
+          <h3>Cyberpunk</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('cyberpunk', 59.99, 'cyberpunk.jpg')">$59.99</button>
       </div>
       <div class="game-card">
-        <img src="minecraft.jpg" alt="Shadow Drive" />
-        <h3>minecraft</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('minecraft', 49.99, 'minecraft.jpg')"
-        >
-          $49.99
-        </button>
+        <a href="game.html?name=minecraft">
+          <img src="minecraft.jpg" alt="minecraft" />
+          <h3>Minecraft</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('minecraft', 49.99, 'minecraft.jpg')">$49.99</button>
       </div>
       <div class="game-card">
-        <img src="signalis.jpg" alt="Drago" />
-        <h3>signalis</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('signalis', 69.99, 'signalis.jpg')"
-        >
-          $69.99
-        </button>
+        <a href="game.html?name=signalis">
+          <img src="signalis.jpg" alt="signalis" />
+          <h3>Signalis</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('signalis', 69.99, 'signalis.jpg')">$69.99</button>
       </div>
     </div>
   </section>
@@ -339,54 +320,39 @@
     <h2>All Games</h2>
     <div class="game-grid">
       <div class="game-card">
-        <img src="pacific_drive.jpg" alt="Neon Knights" />
-        <h3>pacific drive</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('pacific drive', 44.99, 'pacific_drive.jpg')"
-        >
-          $44.99
-        </button>
+        <a href="game.html?name=pacific drive">
+          <img src="pacific_drive.jpg" alt="pacific drive" />
+          <h3>Pacific Drive</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('pacific drive', 44.99, 'pacific_drive.jpg')">$44.99</button>
       </div>
       <div class="game-card">
-        <img src="balatro.jpg" alt="Titan Siege" />
-        <h3>balatro</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('balatro', 54.99, 'balatro.jpg')"
-        >
-          $54.99
-        </button>
+        <a href="game.html?name=balatro">
+          <img src="balatro.jpg" alt="balatro" />
+          <h3>Balatro</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('balatro', 54.99, 'balatro.jpg')">$54.99</button>
       </div>
       <div class="game-card">
-        <img src="ultrakill.jpg" alt="Neon Knights" />
-        <h3>ultrakill</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('ultrakill', 44.99, 'ultrakill.jpg')"
-        >
-          $44.99
-        </button>
+        <a href="game.html?name=ultrakill">
+          <img src="ultrakill.jpg" alt="ultrakill" />
+          <h3>Ultrakill</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('ultrakill', 44.99, 'ultrakill.jpg')">$44.99</button>
       </div>
       <div class="game-card">
-        <img src="zomboid.jpg" alt="Neon Knights" />
-        <h3>project zomboid</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('project zomboid', 44.99, 'zomboid.jpg')"
-        >
-          $44.99
-        </button>
+        <a href="game.html?name=project zomboid">
+          <img src="zomboid.jpg" alt="project zomboid" />
+          <h3>Project Zomboid</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('project zomboid', 44.99, 'zomboid.jpg')">$44.99</button>
       </div>
       <div class="game-card">
-        <img src="red_dead_redeption_2.jpg" alt="Neon Knights" />
-        <h3>red dead redeption 2</h3>
-        <button
-          class="price-button"
-          onclick="addToCart('red dead redemption 2', 44.99, 'red_dead_redeption_2.jpg')"
-        >
-          $44.99
-        </button>
+        <a href="game.html?name=red dead redemption 2">
+          <img src="red_dead_redeption_2.jpg" alt="red dead redemption 2" />
+          <h3>Red Dead Redemption 2</h3>
+        </a>
+        <button class="price-button" onclick="addToCart('red dead redemption 2', 44.99, 'red_dead_redeption_2.jpg')">$44.99</button>
       </div>
     </div>
   </section>
@@ -402,11 +368,7 @@
         <ul style="list-style: none; padding: 0;">
           <li><a href="#featured">Home</a></li>
           <li><a href="#all-games">Shop</a></li>
-          <li>
-            <a href="file:///C:/Users/giorg/OneDrive/Desktop/personal%20project/add-funds.html"
-              >Add Funds</a
-            >
-          </li>
+          <li><a href="add-funds.html">Add Funds</a></li>
         </ul>
       </div>
       <div>
@@ -416,11 +378,7 @@
       </div>
       <div>
         <h4>Follow Us</h4>
-        <p>
-          <a href="#">Facebook</a><br />
-          <a href="#">Twitter</a><br />
-          <a href="#">Instagram</a>
-        </p>
+        <p><a href="#">Facebook</a><br /><a href="#">Twitter</a><br /><a href="#">Instagram</a></p>
       </div>
     </div>
     <div class="footer-bottom">

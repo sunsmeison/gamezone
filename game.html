@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Details</title>
+  <link rel="stylesheet" href="resonsive.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    .site-header {
+      background-color: #000;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e50914 0,
+        #e50914 10px,
+        #000 10px,
+        #000 20px
+      );
+      background-size: 40px 40px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .logo-text a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .balance {
+      font-size: 1rem;
+      background-color: #1c1c1c;
+      padding: 6px 12px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e50914;
+    }
+
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        gap: 15px;
+        z-index: 20;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    .game-details {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 600px;
+      margin: auto;
+      background-color: #111;
+      border-radius: 10px;
+    }
+
+    .game-details img {
+      width: 300px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .game-details h1 {
+      color: #e50914;
+      margin-bottom: 10px;
+    }
+
+    .game-details p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .add-cart-button {
+      margin-top: 20px;
+      background-color: #e50914;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-cart-button:hover {
+      background-color: #bf0811;
+    }
+
+    .site-footer {
+      background-color: #000;
+      color: #777;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+      color: white;
+    }
+
+    .site-footer a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: left;
+      gap: 40px;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+      <span class="logo-text"><a href="index.html">GameZone</a></span>
+      <div class="balance">Balance: $<span id="balance">0</span></div>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="cart_page.html">View Cart</a>
+      <a href="add-funds.html" class="add-funds">Add Funds</a>
+    </nav>
+
+    <div class="burger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <main class="game-details">
+    <img id="game-img" src="" alt="Game Image" />
+    <h1 id="game-title">Loading...</h1>
+    <p id="game-desc">Loading description...</p>
+    <button class="add-cart-button" onclick="handleAddToCart()">Add to Cart</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>GameZone</h3>
+        <p>Your go-to store for games.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#all-games">Shop</a></li>
+          <li><a href="add-funds.html">Add Funds</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@gamezone.com</p>
+        <p>Phone: +1 (800) 123-4567</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p><a href="#">Facebook</a><br /><a href="#">Twitter</a><br /><a href="#">Instagram</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 GameZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const descriptions = {
+      'minecraft': 'A sandbox game about placing blocks and going on adventures.',
+      'cyberpunk': 'A futuristic open-world RPG set in Night City.',
+      'signalis': 'A classic survival horror experience with sci-fi aesthetics.',
+      'balatro': 'A roguelike deck-builder full of strategic card combat.',
+      'pacific drive': 'A surreal survival game exploring the Pacific Northwest.',
+      'ultrakill': 'Fast-paced, ultra-violent retro-inspired shooter.',
+      'project zomboid': 'A deep zombie survival sim. This is how you died.',
+      'red dead redemption 2': 'An epic tale of life in America’s unforgiving heartland.'
+    };
+
+    const prices = {
+      'minecraft': 49.99,
+      'cyberpunk': 59.99,
+      'signalis': 69.99,
+      'balatro': 54.99,
+      'pacific drive': 44.99,
+      'ultrakill': 44.99,
+      'project zomboid': 44.99,
+      'red dead redemption 2': 44.99
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const displayName = capitalize(name);
+
+    if (name) {
+      const imgSrc = name.replace(/\s+/g, '_').toLowerCase() + '.jpg';
+      document.getElementById('game-img').src = imgSrc;
+      document.getElementById('game-title').textContent = displayName;
+      document.getElementById('game-desc').textContent = descriptions[name.toLowerCase()] || 'No description available.';
+    }
+
+    function capitalize(text) {
+      return text.split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+
+    function getBalance() {
+      return parseFloat(localStorage.getItem("balance")) || 0;
+    }
+
+    function setBalance(value) {
+      localStorage.setItem("balance", value);
+    }
+
+    function updateBalanceDisplay() {
+      document.getElementById("balance").textContent = getBalance();
+    }
+
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, image, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${capitalize(name)} added to cart!`);
+    }
+
+    function handleAddToCart() {
+      const gameName = name;
+      const price = prices[gameName.toLowerCase()];
+      const image = gameName.replace(/\s+/g, '_').toLowerCase() + '.jpg';
+      addToCart(gameName, price, image);
+    }
+
+    updateBalanceDisplay();
+  </script>
+</body>
+</html>
